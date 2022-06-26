@@ -1,22 +1,34 @@
 import * as React from 'react';
-import { View, Image, SafeAreaView } from 'react-native';
+import {View, Image, SafeAreaView} from 'react-native';
 
 import styles from './styles';
-import { GLOBAL } from '../../styles/global';
-import { BUTTON_DEFAULT } from '../../elements/buttons';
-import { tabbedNavigation } from '../../../navigators/navigation';
+import {GLOBAL} from '../../styles/global';
+import {BUTTON_DEFAULT} from '../../elements/buttons';
+import {tabbedNavigation} from '../../../navigators/navigation';
 
-import { Props } from './index';
+import {Props} from './index';
+import {Navigation} from 'react-native-navigation';
+import {SCREENS} from '../../../constants/screen';
 
 const SPLASH: React.FC<Props> = (props: Props) => {
-
   React.useEffect(() => {
-    const { splashLaunched } = props;
+    const {splashLaunched} = props;
     splashLaunched();
-  },              []);
+  }, []);
 
   const navigateToHome = () => {
     tabbedNavigation();
+  };
+
+  const pushToScreen = () => {
+    const {componentId} = props;
+
+    Navigation.push(componentId, {
+      component: {
+        name: SCREENS.Dummy,
+        id: SCREENS.Dummy,
+      },
+    });
   };
 
   return (
@@ -31,10 +43,7 @@ const SPLASH: React.FC<Props> = (props: Props) => {
           resizeMode={'center'}
           source={require('../../assets/images/rn_ts.png')}
         />
-        <BUTTON_DEFAULT
-          title={'Continue To App'}
-          onClick={navigateToHome}
-        />
+        <BUTTON_DEFAULT title={'Continue To App'} onClick={pushToScreen} />
       </View>
     </SafeAreaView>
   );

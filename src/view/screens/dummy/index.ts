@@ -1,8 +1,8 @@
-import { connect } from 'react-redux';
-import { ThunkDispatch } from 'redux-thunk';
+import {connect} from 'react-redux';
+import {ThunkDispatch} from 'redux-thunk';
 
 import Component from './Component';
-import { RootState } from '../../../../shared/redux/reducers';
+import {RootState} from '../../../../shared/redux/reducers';
 
 export interface Props {
   dummyText: string;
@@ -13,11 +13,8 @@ const mapStateToProps = (state: RootState) => ({
   app: state.app,
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>): Partial<Props> => ({});
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({});
 
-const dummyContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Component);
+const dummyContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export default dummyContainer;
