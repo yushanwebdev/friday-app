@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Image, SafeAreaView} from 'react-native';
+import {View, Image, SafeAreaView, Pressable} from 'react-native';
 
 import styles from './styles';
 import {GLOBAL} from '../../styles/global';
@@ -21,6 +21,16 @@ const SPLASH: React.FC<Props> = (props: Props) => {
     tabbedNavigation();
   };
 
+  const showBurgerMenu = () => {
+    Navigation.mergeOptions(SCREENS.Drawer, {
+      sideMenu: {
+        left: {
+          visible: true,
+        },
+      },
+    });
+  };
+
   const pushToScreen = () => {
     const {componentId} = props;
 
@@ -31,6 +41,13 @@ const SPLASH: React.FC<Props> = (props: Props) => {
 
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
+      <Pressable onPress={showBurgerMenu}>
+        <Image
+          style={styles.menu}
+          resizeMode="contain"
+          source={require('../../assets/images/burger-menu.png')}
+        />
+      </Pressable>
       <View style={styles.container}>
         <Image
           style={styles.image}

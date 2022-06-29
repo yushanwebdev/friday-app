@@ -14,15 +14,25 @@ export const STATUS_BAR_OPTIONS = {
 export const showSplash = () => {
   Navigation.setRoot({
     root: {
-      stack: {
-        children: [
-          {
-            component: {
-              id: SCREENS.Splash,
-              name: SCREENS.Splash,
-            },
+      sideMenu: {
+        left: {
+          component: {
+            name: SCREENS.Drawer,
+            id: SCREENS.Drawer,
           },
-        ],
+        },
+        center: {
+          stack: {
+            children: [
+              {
+                component: {
+                  id: SCREENS.Splash,
+                  name: SCREENS.Splash,
+                },
+              },
+            ],
+          },
+        },
       },
     },
   });

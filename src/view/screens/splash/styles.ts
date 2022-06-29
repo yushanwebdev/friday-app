@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
-import { TYPOGRAPHY } from '../../styles/typography';
+import {TYPOGRAPHY} from '../../styles/typography';
 
 const styles = StyleSheet.create({
   container: {
@@ -11,6 +11,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '70%',
+  },
+  menu: {
+    height: 44,
+    width: 44,
+    marginHorizontal: 10,
   },
 });
 
