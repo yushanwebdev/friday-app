@@ -9,6 +9,7 @@ import {tabbedNavigation} from '../../../navigators/navigation';
 import {Props} from './index';
 import {Navigation} from 'react-native-navigation';
 import {SCREENS} from '../../../constants/screen';
+import ROUTER from '../../../navigators/router';
 
 const SPLASH: React.FC<Props> = (props: Props) => {
   React.useEffect(() => {
@@ -23,11 +24,8 @@ const SPLASH: React.FC<Props> = (props: Props) => {
   const pushToScreen = () => {
     const {componentId} = props;
 
-    Navigation.push(componentId, {
-      component: {
-        name: SCREENS.Dummy,
-        id: SCREENS.Dummy,
-      },
+    ROUTER.showPushScreen({
+      componentId,
     });
   };
 
