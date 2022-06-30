@@ -98,6 +98,60 @@ export const tabbedNavigation = () =>
                       animate: true,
                     },
                     bottomTab: {
+                      text: 'Search',
+                      fontSize: 14,
+                      textColor: TYPOGRAPHY.COLOR.Primary,
+                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
+                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      icon: require('../view/assets/images/tabbar/settings.png'),
+                      selectedIcon: require('../view/assets/images/tabbar/settings.png'),
+                    },
+                  },
+                },
+              },
+              {
+                stack: {
+                  children: [
+                    {
+                      component: {
+                        name: SCREENS.Settings,
+                      },
+                    },
+                  ],
+                  options: {
+                    topBar: {
+                      visible: false,
+                      drawBehind: true,
+                      animate: true,
+                    },
+                    bottomTab: {
+                      text: 'Cart',
+                      fontSize: 14,
+                      textColor: TYPOGRAPHY.COLOR.Primary,
+                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
+                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      icon: require('../view/assets/images/tabbar/settings.png'),
+                      selectedIcon: require('../view/assets/images/tabbar/settings.png'),
+                    },
+                  },
+                },
+              },
+              {
+                stack: {
+                  children: [
+                    {
+                      component: {
+                        name: SCREENS.Settings,
+                      },
+                    },
+                  ],
+                  options: {
+                    topBar: {
+                      visible: false,
+                      drawBehind: true,
+                      animate: true,
+                    },
+                    bottomTab: {
                       text: 'Settings',
                       fontSize: 14,
                       textColor: TYPOGRAPHY.COLOR.Primary,
