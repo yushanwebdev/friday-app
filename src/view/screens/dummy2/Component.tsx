@@ -9,7 +9,7 @@ import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {Navigation} from 'react-native-navigation';
 import {SCREENS} from '../../../constants/screen';
 
-const DUMMY: React.FC<Props> = (props: Props) => {
+const DUMMY2: React.FC<Props> = (props: Props) => {
   const backNavigation = () => {
     Navigation.pop(props.componentId);
   };
@@ -18,12 +18,12 @@ const DUMMY: React.FC<Props> = (props: Props) => {
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
       <CTEXT>{'This Screen has been pushed over Home screen'}</CTEXT>
       <BUTTON_DEFAULT
-        title="Next 2"
+        title="Next 3"
         onClick={() => {
           Navigation.push(props.componentId, {
             component: {
-              id: SCREENS.Dummy2,
-              name: SCREENS.Dummy2,
+              id: SCREENS.Dummy3,
+              name: SCREENS.Dummy3,
             },
           });
         }}
@@ -33,4 +33,4 @@ const DUMMY: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default DUMMY;
+export default DUMMY2;
