@@ -7,7 +7,6 @@ import {CTEXT} from '../../elements/custom';
 import {Props} from './index';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {Navigation} from 'react-native-navigation';
-import {SCREENS} from '../../../constants/screen';
 
 const DUMMY3: React.FC<Props> = (props: Props) => {
   const backNavigation = () => {
