@@ -11,6 +11,7 @@ import {CTEXT, CTEXTINPUT} from '../../elements/custom';
 
 import {Props} from './index';
 import styles from './styles';
+import {SCREENS} from '../../../constants/screen';
 
 interface State {
   name: string;
@@ -57,6 +58,21 @@ class Home extends React.PureComponent<Props, State> {
     });
   };
 
+  showModal = () => {
+    Navigation.showModal({
+      stack: {
+        children: [
+          {
+            component: {
+              name: SCREENS.Dummy2,
+              id: SCREENS.Dummy2,
+            },
+          },
+        ],
+      },
+    });
+  };
+
   render() {
     const {name} = this.state;
     const {componentId} = this.props;
@@ -78,6 +94,15 @@ class Home extends React.PureComponent<Props, State> {
           <BUTTON_DEFAULT
             onClick={this.showPushScreen}
             title={'Push Screen'}
+            style={{
+              alignSelf: 'center',
+              marginTop: 50,
+              width: 250,
+            }}
+          />
+          <BUTTON_DEFAULT
+            onClick={this.showModal}
+            title={'Show Modal'}
             style={{
               alignSelf: 'center',
               marginTop: 50,

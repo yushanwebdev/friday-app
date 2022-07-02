@@ -29,6 +29,12 @@ const DUMMY2: React.FC<Props> = (props: Props) => {
         }}
       />
       <BUTTON_DEFAULT title="Go Back" onClick={backNavigation} />
+      <BUTTON_DEFAULT
+        title="Dismiss Modal"
+        onClick={() => {
+          Navigation.dismissModal(props.componentId);
+        }}
+      />
     </SafeAreaView>
   );
 };
