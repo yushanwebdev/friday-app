@@ -159,6 +159,8 @@ export const tabbedNavigation = () =>
                       selectedIconColor: TYPOGRAPHY.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/setting.png'),
                       selectedIcon: require('../view/assets/images/tabbar/setting_active.png'),
+                      badge: '1',
+                      badgeColor: TYPOGRAPHY.COLOR.Warning,
                     },
                   },
                 },
