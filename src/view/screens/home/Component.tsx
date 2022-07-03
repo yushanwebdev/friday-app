@@ -91,6 +91,13 @@ class Home extends React.PureComponent<Props, State> {
           <CTEXT>{locale.Home}</CTEXT>
           <CTEXT>{name}</CTEXT>
           <CTEXTINPUT />
+          <Image
+            style={styles.image}
+            resizeMode={'contain'}
+            source={{
+              uri: 'sample',
+            }}
+          />
           <BUTTON_DEFAULT
             onClick={this.showPushScreen}
             title={'Push Screen'}
