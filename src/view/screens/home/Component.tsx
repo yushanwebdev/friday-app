@@ -53,7 +53,7 @@ class Home extends React.PureComponent<Props, State> {
     router.showPushScreen({
       componentId,
       passProps: {
-        dummyText: 'Hello from Home !!!',
+        dummyText: 'Dummy Title',
       },
     });
   };
@@ -84,8 +84,7 @@ class Home extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const {name} = this.state;
-    const {componentId} = this.props;
+    const {componentId, text} = this.props;
 
     return (
       <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
@@ -99,7 +98,7 @@ class Home extends React.PureComponent<Props, State> {
           </TouchableOpacity>
           <Category componentId={componentId} title={locale.Categories} />
           <CTEXT>{locale.Home}</CTEXT>
-          <CTEXT>{name}</CTEXT>
+          <CTEXT>{text}</CTEXT>
           <CTEXTINPUT />
           <Image
             style={styles.image}

@@ -3,8 +3,9 @@ import {ThunkDispatch} from 'redux-thunk';
 
 import Component from './Component';
 import {RootState} from '../../../../shared/redux/reducers';
+import {NavigationComponentProps} from 'react-native-navigation';
 
-export interface Props {
+export interface Props extends NavigationComponentProps {
   dummyText: string;
   componentId: string;
 }

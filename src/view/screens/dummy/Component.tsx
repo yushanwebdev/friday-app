@@ -6,10 +6,10 @@ import {CTEXT} from '../../elements/custom';
 
 import {Props} from './index';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
-import {Navigation} from 'react-native-navigation';
+import {Navigation, NavigationFunctionComponent} from 'react-native-navigation';
 import {SCREENS} from '../../../constants/screen';
 
-const DUMMY: React.FC<Props> = (props: Props) => {
+const DUMMY: NavigationFunctionComponent<Props> = (props: Props) => {
   const backNavigation = () => {
     Navigation.pop(props.componentId);
   };
@@ -39,6 +39,16 @@ const DUMMY: React.FC<Props> = (props: Props) => {
       <BUTTON_DEFAULT title="Go Back" onClick={backNavigation} />
     </SafeAreaView>
   );
+};
+
+DUMMY.options = (props: Props) => {
+  return {
+    topBar: {
+      title: {
+        text: props.dummyText,
+      },
+    },
+  };
 };
 
 export default DUMMY;

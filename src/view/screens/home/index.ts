@@ -8,6 +8,7 @@ import {loadHome} from '../../../../shared/redux/thunk/home';
 
 export interface Props {
   name: string;
+  text: string;
   componentId: string;
   loadHome: () => (
     dispatch: Dispatch<any>,
