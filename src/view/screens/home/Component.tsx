@@ -26,7 +26,17 @@ class Home extends React.PureComponent<Props, State> {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log('>>> MOUNT <<<');
+  }
+
+  componentDidAppear() {
+    console.log('>>> APPEAR <<<');
+  }
+
+  componentWillUnmount() {
+    console.log('>>> UNMOUNT <<<');
+  }
 
   showBurgerMenu() {
     Navigation.mergeOptions('drawerComponentId', {

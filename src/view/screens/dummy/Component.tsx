@@ -14,6 +14,14 @@ const DUMMY: React.FC<Props> = (props: Props) => {
     Navigation.pop(props.componentId);
   };
 
+  React.useEffect(() => {
+    console.log('>>> DUMMY MOUNT <<<');
+
+    return () => {
+      console.log('>>> DUMMY UNMOUNT <<<');
+    };
+  }, []);
+
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
       <CTEXT>{'This Screen has been pushed over Home screen'}</CTEXT>
