@@ -10,7 +10,7 @@
 
 <div align="center">
 
-![Travis](https://api.travis-ci.com/AmitM30/react-native-typescript-boilerplate.svg?branch=master) [![Code Climate](https://codeclimate.com/github/AmitM30/react-native-typescript-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/AmitM30/react-native-typescript-boilerplate) ![iOS and Android](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=flat) ![License](https://img.shields.io/github/license/AmitM30/react-native-typescript-boilerplate.svg) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md) ![Code Size](https://img.shields.io/github/languages/code-size/amitm30/react-native-typescript-boilerplate.svg) ![Releases](https://img.shields.io/github/v/release/amitm30/react-native-typescript-boilerplate.svg?style=flat)
+![Travis](https://api.travis-ci.com/AmitM30/react-native-typescript-boilerplate.svg?branch=master) [![Code Climate](https://codeclimate.com/github/AmitM30/react-native-typescript-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/AmitM30/react-native-typescript-boilerplate) ![iOS and Android](https://img.shields.io/badge/platform-Android%20%7C%20iOS-blue.svg?style=flat) ![License](https://img.shields.io/github/license/AmitM30/react-native-typescript-boilerplate.svg) ![Code Size](https://img.shields.io/github/languages/code-size/amitm30/react-native-typescript-boilerplate.svg) ![Releases](https://img.shields.io/github/v/release/amitm30/react-native-typescript-boilerplate.svg?style=flat)
 
 </div>
 
@@ -22,27 +22,24 @@ The project has been setup based off [RN Getting Started](https://facebook.githu
   <img alt="React Native Typescript Boilerplate" src="./src/view/assets/images/sample/gif_compressed.gif" height="800px" />
 </p>
 
-___
+---
 
 ### Supports React 17, React Native 0.66.0, React Native Navigation v7, Flipper and Hermes
 
 Update (Nov 2021):
+
 - Added Types (actions, reducers, store, components and more).
 - Core API service using fetch
 - Support for M1
 
-| Updates | RNN | RN | React | Comments |
-|---|---|---|---|---|
-|  Nov '21 | 7.23.1 | 0.66.0 | 17.0.2 | Type definitions
-|  May '21 | 7.14.0 | 0.64.1 | 17.0.1 | Update RN RNN, Hermes Support
-|  Oct '20 | 7.1.0 | 0.63.3 | 16.13.1 | Support for Flipper
-|  Apr '20 | 3.7.0 | 0.61.5 | 16.9.0 | Support for RN > 0.60, Android X
-|  Nov '19 | 2.26.2 | 0.59.10 |  | Maintenance |
-|  Mar '19 | 2.13.1 | 0.58.6 | 16.8.4 |
-
-## Sponsor
-
-I will keep supporting the projects that I have open sourced. If you have used any of my projects, for yourself or your business, I'd love your support through Github [sponsors](https://github.com/sponsors/AmitM30). You can also try to convince your employer to sponsor as a business.
+| Updates | RNN    | RN      | React   | Comments                         |
+| ------- | ------ | ------- | ------- | -------------------------------- |
+| Nov '21 | 7.23.1 | 0.66.0  | 17.0.2  | Type definitions                 |
+| May '21 | 7.14.0 | 0.64.1  | 17.0.1  | Update RN RNN, Hermes Support    |
+| Oct '20 | 7.1.0  | 0.63.3  | 16.13.1 | Support for Flipper              |
+| Apr '20 | 3.7.0  | 0.61.5  | 16.9.0  | Support for RN > 0.60, Android X |
+| Nov '19 | 2.26.2 | 0.59.10 |         | Maintenance                      |
+| Mar '19 | 2.13.1 | 0.58.6  | 16.8.4  |
 
 ## Introduction
 
@@ -75,12 +72,12 @@ Jumpstart building robust apps using React Native and TypeScript with most commo
 
 ##### App Screens
 
-| ![Splash](./src/view/assets/images/sample/1.png "Splash") | ![Home](./src/view/assets/images/sample/2.png "Home") |![Side Menu](./src/view/assets/images/sample/3.png "Side Menu") |
-| :-------------------------------------------------------: | :---------------------------------------------------: | :---------------------------------------------------: |
+| ![Splash](./src/view/assets/images/sample/1.png 'Splash') | ![Home](./src/view/assets/images/sample/2.png 'Home') | ![Side Menu](./src/view/assets/images/sample/3.png 'Side Menu') |
+| :-------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------------------: |
 
 ##### Flipper Support
 
-![Flipper](./src/view/assets/images/sample/4.png "Flipper")
+![Flipper](./src/view/assets/images/sample/4.png 'Flipper')
 
 ### Table of Contents
 
@@ -92,7 +89,6 @@ Jumpstart building robust apps using React Native and TypeScript with most commo
   - [Renaming the App](#renaming-the-app)
   - [iOS Launch Screen](#ios-launch-screen)
   - [Android Launch Screen](#android-launch-screen)
-- [Contributing](#contributing)
 - [TODO](#todo)
 
 ### Project Structure
@@ -151,11 +147,13 @@ Presentation layer for the app - screens, styles, images, icons etc.
 ### Getting Started
 
 Make sure node version installed is `>=12.x.x`. Then install using yarn (or npm):
+
 ```
 yarn install
 ```
 
 Start the Metro Bundler:
+
 ```
 yarn start
 ```
@@ -179,11 +177,13 @@ yarn ios
 ###### Android
 
 Start an Android Simulator from:
+
 ```
 Android Studio > Tools > AVD Manager > Run any device
 ```
 
 Similarly, run from Android Studio itself Or from Terminal:
+
 ```
 yarn android
 # runs the following command
@@ -192,15 +192,15 @@ yarn android
 
 ### Commands
 
-|  | Remark |
-|---|---|
-| `yarn start` | Starts metro bundler |
-| `yarn ios` | Starts iOS app. Start metro bundler first |
-| `yarn android` | Starts Android app. Start metro bundler and Android emulator first |
-| `yarn lint` | linting |
-| `yarn lint:fix` | tries to fix linting issues automatically |
-| `yarn build:android:debug` | Android debug build |
-| `yarn build:android:release` | Android release build |
+|                              | Remark                                                             |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `yarn start`                 | Starts metro bundler                                               |
+| `yarn ios`                   | Starts iOS app. Start metro bundler first                          |
+| `yarn android`               | Starts Android app. Start metro bundler and Android emulator first |
+| `yarn lint`                  | linting                                                            |
+| `yarn lint:fix`              | tries to fix linting issues automatically                          |
+| `yarn build:android:debug`   | Android debug build                                                |
+| `yarn build:android:release` | Android release build                                              |
 
 ### Cheat Sheet
 
@@ -212,7 +212,7 @@ XCode -> Project Folder -> Click on `Images.xcassets` -> Click on `LaunchScreen`
 
 Change the 3 images here to set the new launch screen for iOS.
 
-![Launch Screen](./src/view/assets/images/sample/splash-image.png "Launch Screen")
+![Launch Screen](./src/view/assets/images/sample/splash-image.png 'Launch Screen')
 
 #### Android Launch Screen
 
@@ -223,17 +223,22 @@ Change the 3 images here to set the new launch screen for iOS.
 Change the images the `drawable-*` folders to set the new launch screen for Android.
 
 #### M1 support
+
 Some additional steps may be required for project to work on M1.
 
-  - Disable Rosetta in Terminal
-  - Install ffi
+- Disable Rosetta in Terminal
+- Install ffi
+
 ```
 sudo arch -x86_64 gem install ffi
 ```
-  - Re-install dependencies
+
+- Re-install dependencies
+
 ```
 arch -x86_64 pod install
 ```
+
 Now try and run CocoaPods.
 
 P.S.: Thanks to samanthadotcom#7043 (discord)
@@ -247,18 +252,16 @@ For Single screen application, replace this tabbed based navigation with a singl
 #### Renaming the App
 
 You might also want to rename the app for your own use. Follow any of the links below.
+
 - [How to Rename A React Native App](https://medium.com/the-react-native-log/how-to-rename-a-react-native-app-dafd92161c35)
 
 Or
 
 - NPM Package: [react-native-rename](https://www.npmjs.com/package/react-native-rename)
 
-### Contributing
-
-Please check out [Contributing](https://github.com/AmitM30/react-native-typescript-boilerplate/blob/master/CONTRIBUTING.md).
-
 ### Authors
 
+- [**Amith Mangal**](https://github.com/AmitM30) - _Main Author_
 - [**Anurag Chutani**](https://github.com/a7urag) - _Android Setup_
 - [**Brian Varley**](https://github.com/BrianJVarley) - _Windows Setup_
 - [**Nelson Omuto**](https://github.com/nelsonomuto) - _Update Podfile_
