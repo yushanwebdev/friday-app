@@ -5,13 +5,13 @@ import {SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {GLOBAL} from '../../styles/global';
 import {Category} from '../../widgets/category';
 import locale from '../../../constants/locale';
-import router from '../../../navigators/router';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {CTEXT, CTEXTINPUT} from '../../elements/custom';
 
 import {Props} from './index';
 import styles from './styles';
 import {SCREENS} from '../../../constants/screen';
+import ROUTER from '../../../navigators/router';
 
 interface State {
   name: string;
@@ -50,7 +50,7 @@ class Home extends React.PureComponent<Props, State> {
 
   showPushScreen = () => {
     const {componentId} = this.props;
-    router.showPushScreen({
+    ROUTER.showPushScreen({
       componentId,
       passProps: {
         dummyText: 'Dummy Title',
@@ -58,13 +58,11 @@ class Home extends React.PureComponent<Props, State> {
     });
   };
 
-  showCartScreen = () => {
+  onPressCart = () => {
     const {componentId} = this.props;
 
-    Navigation.mergeOptions(componentId, {
-      bottomTabs: {
-        currentTabIndex: 2,
-      },
+    ROUTER.showCartScreen({
+      componentId,
     });
   };
 
@@ -89,7 +87,7 @@ class Home extends React.PureComponent<Props, State> {
     return (
       <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
         <ScrollView style={GLOBAL.LAYOUT.pageContainer}>
-          <TouchableOpacity onPress={this.showCartScreen}>
+          <TouchableOpacity onPress={this.onPressCart}>
             <Image
               style={styles.image}
               resizeMode={'contain'}

@@ -11,4 +11,8 @@ const SCREENS = {
   Dummy3: 'Dummy3',
 };
 
-export {SCREENS};
+const ACTION_BUTTONS = {
+  Cart: 'Cart',
+};
+
+export {SCREENS, ACTION_BUTTONS};
