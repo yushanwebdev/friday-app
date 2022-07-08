@@ -1,6 +1,6 @@
-import { StyleSheet, Platform, ViewStyle, TextStyle } from 'react-native';
+import {StyleSheet, Platform, ViewStyle, TextStyle} from 'react-native';
 
-import { TYPOGRAPHY } from './typography';
+import {TYPOGRAPHY} from './typography';
 
 export const widgetPaddingValue = 16;
 
@@ -18,7 +18,7 @@ const LAYOUT = StyleSheet.create({
   shadow: {
     shadowOpacity: 0.25,
     shadowRadius: 3,
-    shadowOffset: { width: 3, height: 3 },
+    shadowOffset: {width: 3, height: 3},
     elevation: Platform.OS === 'ios' ? 0 : 3,
   },
 });
@@ -38,7 +38,7 @@ const CTA = {
     primary: {
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: TYPOGRAPHY.COLOR.Secondary,
+      backgroundColor: TYPOGRAPHY.COLOR.Primary,
       height: TYPOGRAPHY.BUTTON.primary.height,
       borderWidth: TYPOGRAPHY.BUTTON.primary.borderWidth,
       borderRadius: TYPOGRAPHY.BUTTON.primary.borderRadius,
@@ -136,4 +136,4 @@ const GLOBAL = {
   TEXT_INPUT,
 };
 
-export { GLOBAL };
+export {GLOBAL};
