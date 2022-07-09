@@ -5,7 +5,11 @@ import {SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {GLOBAL} from '../../styles/global';
 import {Category} from '../../widgets/category';
 import locale from '../../../constants/locale';
-import {BUTTON_DEFAULT, BUTTON_SECONDARY} from '../../elements/buttons';
+import {
+  BUTTON_CATEGORY,
+  BUTTON_DEFAULT,
+  BUTTON_SECONDARY,
+} from '../../elements/buttons';
 import {CTEXT, CTEXTINPUT} from '../../elements/custom';
 
 import {Props} from './index';
@@ -129,6 +133,10 @@ class Home extends React.PureComponent<Props, State> {
           <CTEXT style={GLOBAL.FONTS.subTitle}>See all</CTEXT>
           <CTEXT style={GLOBAL.FONTS.body}>Bang and Olufsen</CTEXT>
           <SVGIcons.Search color={THEME.COLOR.Primary} />
+          <BUTTON_CATEGORY
+            icon={<SVGIcons.CategoryIcons.Shoes />}
+            onClick={() => {}}
+          />
         </ScrollView>
       </SafeAreaView>
     );

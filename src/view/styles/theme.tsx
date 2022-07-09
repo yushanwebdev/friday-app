@@ -22,15 +22,21 @@ const COLOR = {
 
 const FONT = {
   Primary: 'Helvetica',
+};
+
+const TEXT = {
   h1: {
     fontSize: 24,
     marginBottom: 10,
   },
+};
+
+const TEXT_INPUT = {
   input: {
     height: 36,
     fontSize: 14,
     borderWidth: 0.5,
-    borderRadius: 5,
+    borderRadius: 18,
     paddingHorizontal: 12,
   },
 };
@@ -56,6 +62,11 @@ const BUTTON = {
       fontSize: 14,
     },
   },
+  category: {
+    width: 42,
+    height: 42,
+    borderRadius: 24,
+  },
 };
 
 const ELEMENTS = {
@@ -76,6 +87,8 @@ const SHADOW = {
 const THEME = {
   COLOR,
   FONT,
+  TEXT,
+  TEXT_INPUT,
   BUTTON,
   ELEMENTS,
   SHADOW,

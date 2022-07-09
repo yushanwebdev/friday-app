@@ -3,12 +3,15 @@ import {TouchableOpacity, ViewStyle} from 'react-native';
 
 import {CTEXT} from './custom';
 import {GLOBAL} from '../styles/global';
-
 type Callback = () => any;
 export interface Props {
   title: string;
   onClick: Callback;
   style?: ViewStyle;
+}
+
+export interface IconProps extends Omit<Props, 'title'> {
+  icon: React.ReactElement;
 }
 
 /**
@@ -23,7 +26,7 @@ const BUTTON_DEFAULT: React.FC<Props> = ({title, onClick, style}: Props) => (
   </TouchableOpacity>
 );
 
-const BUTTON_SECONDARY: React.FC<Props> = ({title, onClick, style}: Props) => (
+const BUTTON_SECONDARY: React.FC<Props> = ({title, onClick, style}) => (
   <TouchableOpacity
     activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
     style={[GLOBAL.CTA.Style.secondary, GLOBAL.LAYOUT.shadow, style]}
@@ -32,4 +35,13 @@ const BUTTON_SECONDARY: React.FC<Props> = ({title, onClick, style}: Props) => (
   </TouchableOpacity>
 );
 
-export {BUTTON_DEFAULT, BUTTON_SECONDARY};
+const BUTTON_CATEGORY: React.FC<IconProps> = ({icon, onClick, style}) => (
+  <TouchableOpacity
+    activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
+    style={[GLOBAL.CTA.Style.category, GLOBAL.LAYOUT.shadow, style]}
+    onPress={() => onClick()}>
+    {icon}
+  </TouchableOpacity>
+);
+
+export {BUTTON_DEFAULT, BUTTON_SECONDARY, BUTTON_CATEGORY};

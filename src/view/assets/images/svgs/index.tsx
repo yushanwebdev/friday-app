@@ -2,6 +2,7 @@ import * as React from 'react';
 import {ViewStyle} from 'react-native';
 import Svg, {Path} from 'react-native-svg';
 import {THEME} from '../../../styles/theme';
+import * as CategoryIcons from './category';
 
 interface Props {
   style?: ViewStyle;
@@ -31,4 +32,5 @@ Search.defaultProps = defaults;
 
 export default {
   Search,
+  CategoryIcons,
 };

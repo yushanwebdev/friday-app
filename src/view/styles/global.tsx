@@ -59,6 +59,14 @@ const CTA = {
       color: THEME.COLOR.Primary,
       fontSize: (THEME.BUTTON.secondary.text as TextStyle).fontSize,
     },
+    category: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: THEME.BUTTON.category.width,
+      height: THEME.BUTTON.category.height,
+      backgroundColor: THEME.COLOR.Default,
+      borderRadius: THEME.BUTTON.category.borderRadius,
+    },
   }),
   TouchableOpacity: {
     default: 0.8,
@@ -67,7 +75,7 @@ const CTA = {
 
 const FONTS = StyleSheet.create({
   h1: {
-    ...THEME.FONT.h1,
+    ...THEME.TEXT.h1,
     fontFamily: THEME.FONT.Primary,
     color: THEME.COLOR.DefaultSelected,
   },
@@ -102,14 +110,14 @@ const TEXT_INPUT = {
   Style: StyleSheet.create({
     Default: {
       color: THEME.COLOR.DefaultSelected,
-      height: THEME.FONT.input.height,
-      borderRadius: THEME.FONT.input.borderRadius,
-      backgroundColor: THEME.COLOR.Border,
+      height: THEME.TEXT_INPUT.input.height,
+      borderRadius: THEME.TEXT_INPUT.input.borderRadius,
+      backgroundColor: THEME.COLOR.BgColor,
       fontFamily: THEME.FONT.Primary,
       borderColor: THEME.COLOR.Border,
-      fontSize: THEME.FONT.input.fontSize,
-      borderWidth: THEME.FONT.input.borderWidth,
-      paddingHorizontal: THEME.FONT.input.paddingHorizontal,
+      fontSize: THEME.TEXT_INPUT.input.fontSize,
+      borderWidth: THEME.TEXT_INPUT.input.borderWidth,
+      paddingHorizontal: THEME.TEXT_INPUT.input.paddingHorizontal,
     },
     Bold: {
       fontSize: 12,
