@@ -12,6 +12,8 @@ import {Props} from './index';
 import styles from './styles';
 import {SCREENS} from '../../../constants/screen';
 import ROUTER from '../../../navigators/router';
+import SVGIcons from '../../assets/images/svgs';
+import {THEME} from '../../styles/theme';
 
 interface State {
   name: string;
@@ -126,6 +128,7 @@ class Home extends React.PureComponent<Props, State> {
           <CTEXT style={GLOBAL.FONTS.h1}>Categories</CTEXT>
           <CTEXT style={GLOBAL.FONTS.subTitle}>See all</CTEXT>
           <CTEXT style={GLOBAL.FONTS.body}>Bang and Olufsen</CTEXT>
+          <SVGIcons.Search color={THEME.COLOR.Primary} />
         </ScrollView>
       </SafeAreaView>
     );
