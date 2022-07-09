@@ -14,25 +14,21 @@ export const STATUS_BAR_OPTIONS = {
 export const showSplash = () => {
   Navigation.setRoot({
     root: {
-      sideMenu: {
-        left: {
-          component: {
-            name: SCREENS.Drawer,
-            id: SCREENS.Drawer,
-          },
-        },
-        center: {
-          stack: {
-            children: [
-              {
-                component: {
-                  id: SCREENS.Splash,
-                  name: SCREENS.Splash,
+      stack: {
+        children: [
+          {
+            component: {
+              id: SCREENS.Splash,
+              name: SCREENS.Splash,
+              options: {
+                statusBar: STATUS_BAR_OPTIONS,
+                topBar: {
+                  visible: false,
                 },
               },
-            ],
+            },
           },
-        },
+        ],
       },
     },
   });
@@ -171,5 +167,3 @@ export const tabbedNavigation = () =>
       },
     },
   });
-
-export default tabbedNavigation;

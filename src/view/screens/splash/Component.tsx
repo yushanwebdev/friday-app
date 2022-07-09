@@ -41,13 +41,6 @@ const SPLASH: React.FC<Props> = (props: Props) => {
 
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
-      <Pressable onPress={showBurgerMenu}>
-        <Image
-          style={styles.menu}
-          resizeMode="contain"
-          source={require('../../assets/images/burger-menu.png')}
-        />
-      </Pressable>
       <View style={styles.container}>
         <Image
           style={styles.image}
@@ -58,7 +51,7 @@ const SPLASH: React.FC<Props> = (props: Props) => {
           resizeMode={'center'}
           source={require('../../assets/images/rn_ts.png')}
         />
-        <BUTTON_DEFAULT title={'Continue To App'} onClick={pushToScreen} />
+        <BUTTON_DEFAULT title={'Continue To App'} onClick={navigateToHome} />
       </View>
     </SafeAreaView>
   );
