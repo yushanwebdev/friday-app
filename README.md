@@ -54,7 +54,7 @@ Jumpstart building robust apps using React Native and TypeScript with most commo
 - **Atomic Design pattern**
   - The structure of the app is inspired by [atomic design pattern](https://atomicdesign.bradfrost.com/chapter-2/).
   - Widgets / Elements: Build your own **Design Language System** with these building blocks.
-    - **Typography**: Base Typography setup - Color, Font, LAYOUT, CTA, FONTS, TEXT, TEXT_INPUT
+    - **Theme**: Base Theme setup - Color, Font, LAYOUT, CTA, FONTS, TEXT, TEXT_INPUT
     - **elements**: `<BUTTON_DEFAULT>` or `<CTEXT>`. They are custom elements that have default properties like font, size and so on.
     ```typescript
     <CTEXT style={GLOBAL.CTA.Style.primaryText}>{title}</CTEXT>
@@ -120,7 +120,7 @@ Jumpstart building robust apps using React Native and TypeScript with most commo
 │   │   ├── elements				Custom elements
 │   │   ├── assets
 │   │   ├── screens
-│   │   ├── styles				Typography
+│   │   ├── styles				Theme
 │   │   └── widgets				Custom components
 │   └── utilities
 ├── __tests__					Unit Tests

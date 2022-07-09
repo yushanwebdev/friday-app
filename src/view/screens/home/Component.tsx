@@ -5,7 +5,7 @@ import {SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {GLOBAL} from '../../styles/global';
 import {Category} from '../../widgets/category';
 import locale from '../../../constants/locale';
-import {BUTTON_DEFAULT} from '../../elements/buttons';
+import {BUTTON_DEFAULT, BUTTON_SECONDARY} from '../../elements/buttons';
 import {CTEXT, CTEXTINPUT} from '../../elements/custom';
 
 import {Props} from './index';
@@ -114,7 +114,7 @@ class Home extends React.PureComponent<Props, State> {
               width: 250,
             }}
           />
-          <BUTTON_DEFAULT
+          <BUTTON_SECONDARY
             onClick={this.showModal}
             title={'Show Modal'}
             style={{
@@ -123,6 +123,9 @@ class Home extends React.PureComponent<Props, State> {
               width: 250,
             }}
           />
+          <CTEXT style={GLOBAL.FONTS.h1}>Categories</CTEXT>
+          <CTEXT style={GLOBAL.FONTS.subTitle}>See all</CTEXT>
+          <CTEXT style={GLOBAL.FONTS.body}>Bang and Olufsen</CTEXT>
         </ScrollView>
       </SafeAreaView>
     );

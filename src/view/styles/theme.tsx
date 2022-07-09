@@ -1,3 +1,5 @@
+import {Platform} from 'react-native';
+
 const COLOR = {
   // CTA
   Primary: '#04C56A',
@@ -15,6 +17,7 @@ const COLOR = {
   // Text
   Title: '#393939',
   SecondaryTitle: '#4E4E50',
+  Paragraph: '#BDBEBF',
 };
 
 const FONT = {
@@ -58,13 +61,24 @@ const BUTTON = {
 const ELEMENTS = {
   CategoryIcons: {marginRight: 20},
   Card: {marginBottom: 30},
+  PageContainer: {
+    padding: 16,
+  },
 };
 
-const TYPOGRAPHY = {
+const SHADOW = {
+  shadowOpacity: 0.25,
+  shadowRadius: 3,
+  shadowOffset: {width: 3, height: 3},
+  elevation: Platform.OS === 'ios' ? 0 : 3,
+};
+
+const THEME = {
   COLOR,
   FONT,
   BUTTON,
   ELEMENTS,
+  SHADOW,
 };
 
-export {TYPOGRAPHY};
+export {THEME};

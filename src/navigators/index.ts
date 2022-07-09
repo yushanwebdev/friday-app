@@ -2,7 +2,7 @@ import {Navigation} from 'react-native-navigation';
 
 import store from '../../shared/redux/store';
 import {registerScreens} from '../view/screens';
-import {TYPOGRAPHY} from '../view/styles/typography';
+import {THEME} from '../view/styles/theme';
 import {tabbedNavigation} from './navigation';
 
 /**
@@ -28,7 +28,7 @@ const app = () => {
         backButton: {
           title: 'Back',
           icon: require('../view/assets/images/back_button.png'),
-          color: TYPOGRAPHY.COLOR.Warning,
+          color: THEME.COLOR.Warning,
         },
       },
     });

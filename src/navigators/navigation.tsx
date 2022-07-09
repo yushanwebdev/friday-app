@@ -4,11 +4,11 @@
 import {Navigation} from 'react-native-navigation';
 
 import {SCREENS} from '../constants/screen';
-import {TYPOGRAPHY} from '../view/styles/typography';
+import {THEME} from '../view/styles/theme';
 
 export const STATUS_BAR_OPTIONS = {
   hideWithTopBar: true,
-  backgroundColor: TYPOGRAPHY.COLOR.StatusBar,
+  backgroundColor: THEME.COLOR.StatusBar,
 };
 
 export const showSplash = () => {
@@ -73,9 +73,9 @@ export const tabbedNavigation = () =>
                     bottomTab: {
                       fontSize: 14,
                       text: '',
-                      textColor: TYPOGRAPHY.COLOR.Primary,
-                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
-                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      textColor: THEME.COLOR.Primary,
+                      selectedTextColor: THEME.COLOR.Warning,
+                      selectedIconColor: THEME.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/home.png'),
                       selectedIcon: require('../view/assets/images/tabbar/home_active.png'),
                     },
@@ -100,9 +100,9 @@ export const tabbedNavigation = () =>
                     bottomTab: {
                       text: '',
                       fontSize: 14,
-                      textColor: TYPOGRAPHY.COLOR.Primary,
-                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
-                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      textColor: THEME.COLOR.Primary,
+                      selectedTextColor: THEME.COLOR.Warning,
+                      selectedIconColor: THEME.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/search.png'),
                       selectedIcon: require('../view/assets/images/tabbar/search_active.png'),
                     },
@@ -127,9 +127,9 @@ export const tabbedNavigation = () =>
                     bottomTab: {
                       text: '',
                       fontSize: 14,
-                      textColor: TYPOGRAPHY.COLOR.Primary,
-                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
-                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      textColor: THEME.COLOR.Primary,
+                      selectedTextColor: THEME.COLOR.Warning,
+                      selectedIconColor: THEME.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/cart.png'),
                       selectedIcon: require('../view/assets/images/tabbar/cart_active.png'),
                     },
@@ -154,13 +154,13 @@ export const tabbedNavigation = () =>
                     bottomTab: {
                       text: '',
                       fontSize: 14,
-                      textColor: TYPOGRAPHY.COLOR.Primary,
-                      selectedTextColor: TYPOGRAPHY.COLOR.Warning,
-                      selectedIconColor: TYPOGRAPHY.COLOR.Warning,
+                      textColor: THEME.COLOR.Primary,
+                      selectedTextColor: THEME.COLOR.Warning,
+                      selectedIconColor: THEME.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/setting.png'),
                       selectedIcon: require('../view/assets/images/tabbar/setting_active.png'),
                       badge: '1',
-                      badgeColor: TYPOGRAPHY.COLOR.Warning,
+                      badgeColor: THEME.COLOR.Warning,
                     },
                   },
                 },
