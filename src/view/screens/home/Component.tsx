@@ -10,7 +10,7 @@ import {
   BUTTON_DEFAULT,
   BUTTON_SECONDARY,
 } from '../../elements/buttons';
-import {CTEXT, CTEXTINPUT} from '../../elements/custom';
+import {CTEXT, CTEXTINPUT, CTEXTPRICE} from '../../elements/custom';
 
 import {Props} from './index';
 import styles from './styles';
@@ -18,6 +18,9 @@ import {SCREENS} from '../../../constants/screen';
 import ROUTER from '../../../navigators/router';
 import SVGIcons from '../../assets/images/svgs';
 import {THEME} from '../../styles/theme';
+import SectionTitle from '../../elements/section/title';
+import ProductDisplay from '../../elements/productDisplay';
+import ProductWidget from '../../widgets/ProductWidget';
 
 interface State {
   name: string;
@@ -92,7 +95,9 @@ class Home extends React.PureComponent<Props, State> {
 
     return (
       <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
-        <ScrollView style={GLOBAL.LAYOUT.pageContainer}>
+        <ScrollView
+          style={GLOBAL.LAYOUT.pageContainer}
+          contentContainerStyle={GLOBAL.LAYOUT.scrollViewInner}>
           <TouchableOpacity onPress={this.onPressCart}>
             <Image
               style={styles.image}
@@ -129,14 +134,24 @@ class Home extends React.PureComponent<Props, State> {
               width: 250,
             }}
           />
-          <CTEXT style={GLOBAL.FONTS.h1}>Categories</CTEXT>
-          <CTEXT style={GLOBAL.FONTS.subTitle}>See all</CTEXT>
-          <CTEXT style={GLOBAL.FONTS.body}>Bang and Olufsen</CTEXT>
+          <CTEXT style={GLOBAL.TEXT.h1}>Categories</CTEXT>
+          <CTEXT style={GLOBAL.TEXT.subTitle}>See all</CTEXT>
+          <CTEXT style={GLOBAL.TEXT.body}>Bang and Olufsen</CTEXT>
           <SVGIcons.Search color={THEME.COLOR.Primary} />
           <BUTTON_CATEGORY
             icon={<SVGIcons.CategoryIcons.Shoes />}
             onClick={() => {}}
           />
+          <SectionTitle title="Categories" subTitle="See All" />
+          <BUTTON_CATEGORY
+            icon={<SVGIcons.Camera />}
+            onClick={() => {}}
+            style={GLOBAL.CTA.Style.camera}
+            hideShadow={false}
+          />
+          <CTEXTPRICE>$755</CTEXTPRICE>
+          <ProductDisplay />
+          <ProductWidget componentId={componentId} />
         </ScrollView>
       </SafeAreaView>
     );

@@ -13,9 +13,22 @@ const LAYOUT = StyleSheet.create({
     flex: 1,
   },
   pageContainer: {
-    padding: THEME.ELEMENTS.PageContainer.padding,
+    padding: THEME.LAYOUT.pageContainer.padding,
   },
   shadow: THEME.SHADOW,
+  scrollViewInner: {
+    paddingBottom: THEME.LAYOUT.scrollViewInner.paddingBottom,
+  },
+  productWidgetInner: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+});
+
+const WIDGETS = StyleSheet.create({
+  productWidget: {
+    flexDirection: 'row',
+  },
 });
 
 const ELEMENTS = StyleSheet.create({
@@ -25,6 +38,11 @@ const ELEMENTS = StyleSheet.create({
   CategoryIcons: {
     alignItems: 'center',
     marginRight: THEME.ELEMENTS.CategoryIcons.marginRight,
+  },
+  SectionTitle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: THEME.ELEMENTS.SectionTitle.marginBottom,
   },
 });
 
@@ -67,13 +85,28 @@ const CTA = {
       backgroundColor: THEME.COLOR.Default,
       borderRadius: THEME.BUTTON.category.borderRadius,
     },
+    camera: {
+      backgroundColor: THEME.COLOR.Primary,
+    },
   }),
   TouchableOpacity: {
     default: 0.8,
   },
 };
 
-const FONTS = StyleSheet.create({
+const TEXT = StyleSheet.create({
+  Default: {
+    textAlign: 'left',
+    fontFamily: THEME.FONT.Primary,
+    fontSize: 14,
+    color: THEME.COLOR.Primary,
+  },
+  Bold: {
+    textAlign: 'left',
+    fontSize: 14,
+    fontFamily: THEME.FONT.Primary,
+    color: THEME.COLOR.Primary,
+  },
   h1: {
     ...THEME.TEXT.h1,
     fontFamily: THEME.FONT.Primary,
@@ -89,20 +122,11 @@ const FONTS = StyleSheet.create({
     fontFamily: THEME.FONT.Primary,
     color: THEME.COLOR.SecondaryTitle,
   },
-});
-
-const TEXT = StyleSheet.create({
-  Default: {
-    textAlign: 'left',
-    fontFamily: THEME.FONT.Primary,
-    fontSize: 14,
+  price: {
     color: THEME.COLOR.Primary,
-  },
-  Bold: {
-    textAlign: 'left',
-    fontSize: 14,
-    fontFamily: THEME.FONT.Primary,
-    color: THEME.COLOR.Primary,
+    fontSize: THEME.TEXT.price.fontSize,
+    fontWeight: (THEME.TEXT.price.textStyle as TextStyle).fontWeight,
+    marginTop: THEME.TEXT.price.margin,
   },
 });
 
@@ -130,13 +154,20 @@ const TEXT_INPUT = {
   }),
 };
 
+const CUSTOM = StyleSheet.create({
+  CImage: {
+    borderRadius: THEME.ELEMENTS.CImage.borderRadius,
+  },
+});
+
 const GLOBAL = {
   LAYOUT,
+  WIDGETS,
   ELEMENTS,
   CTA,
-  FONTS,
   TEXT,
   TEXT_INPUT,
+  CUSTOM,
 };
 
 export {GLOBAL};

@@ -3,6 +3,7 @@ import {TouchableOpacity, ViewStyle} from 'react-native';
 
 import {CTEXT} from './custom';
 import {GLOBAL} from '../styles/global';
+import {THEME} from '../styles/theme';
 type Callback = () => any;
 export interface Props {
   title: string;
@@ -12,6 +13,7 @@ export interface Props {
 
 export interface IconProps extends Omit<Props, 'title'> {
   icon: React.ReactElement;
+  hideShadow?: Boolean;
 }
 
 /**
@@ -35,10 +37,15 @@ const BUTTON_SECONDARY: React.FC<Props> = ({title, onClick, style}) => (
   </TouchableOpacity>
 );
 
-const BUTTON_CATEGORY: React.FC<IconProps> = ({icon, onClick, style}) => (
+const BUTTON_CATEGORY: React.FC<IconProps> = ({
+  icon,
+  onClick,
+  style,
+  hideShadow,
+}) => (
   <TouchableOpacity
     activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
-    style={[GLOBAL.CTA.Style.category, GLOBAL.LAYOUT.shadow, style]}
+    style={[GLOBAL.CTA.Style.category, hideShadow ? {} : THEME.SHADOW, style]}
     onPress={() => onClick()}>
     {icon}
   </TouchableOpacity>

@@ -8,7 +8,7 @@ import {Props} from './index';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {Navigation} from 'react-native-navigation';
 
-const DUMMY3: React.FC<Props> = (props: Props) => {
+const Listings: React.FC<Props> = (props: Props) => {
   const backNavigation = () => {
     Navigation.popToRoot(props.componentId);
   };
@@ -21,4 +21,4 @@ const DUMMY3: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default DUMMY3;
+export default Listings;

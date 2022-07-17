@@ -1,5 +1,9 @@
 import * as React from 'react';
 import {
+  Image,
+  ImageResizeMode,
+  ImageSourcePropType,
+  ImageStyle,
   NativeSyntheticEvent,
   StyleProp,
   Text,
@@ -26,6 +30,13 @@ export interface TextInputProps {
   textInputRef?: any;
   placeholderTextColor?: string;
   onSubmit?: onSubmitEvent;
+}
+
+export interface ImageProps {
+  path?: ImageSourcePropType;
+  uri?: string;
+  style?: StyleProp<ImageStyle>;
+  resizeMode?: ImageResizeMode;
 }
 
 const CTEXT: React.FC<TextProps> = (props: TextProps) => (
@@ -57,4 +68,23 @@ const CTEXTINPUT: React.FC<TextInputProps> = (props: TextInputProps) => {
   );
 };
 
-export {CTEXT, CTEXTINPUT};
+const CTEXTPRICE: React.FC<TextProps> = (props: TextProps) => (
+  <Text style={[GLOBAL.TEXT.Default, GLOBAL.TEXT.price, props.style]}>
+    {props.children}
+  </Text>
+);
+
+const CIMAGE: React.FC<ImageProps> = ({
+  style,
+  path,
+  uri,
+  resizeMode,
+}: ImageProps) => (
+  <Image
+    style={[GLOBAL.CUSTOM.CImage, style]}
+    resizeMode={resizeMode || 'cover'}
+    source={path ? path : {uri}}
+  />
+);
+
+export {CTEXT, CTEXTINPUT, CTEXTPRICE, CIMAGE};

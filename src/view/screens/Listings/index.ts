@@ -15,6 +15,9 @@ const mapStateToProps = (state: RootState) => ({
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({});
 
-const dummyContainer = connect(mapStateToProps, mapDispatchToProps)(Component);
+const ListingsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Component);
 
-export default dummyContainer;
+export default ListingsContainer;

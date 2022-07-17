@@ -26,8 +26,15 @@ const FONT = {
 
 const TEXT = {
   h1: {
-    fontSize: 24,
+    fontSize: 22,
     marginBottom: 10,
+  },
+  price: {
+    fontSize: 16,
+    textStyle: {
+      fontWeight: 'bold',
+    },
+    margin: 8,
   },
 };
 
@@ -63,8 +70,8 @@ const BUTTON = {
     },
   },
   category: {
-    width: 42,
-    height: 42,
+    width: 48,
+    height: 48,
     borderRadius: 24,
   },
 };
@@ -72,8 +79,20 @@ const BUTTON = {
 const ELEMENTS = {
   CategoryIcons: {marginRight: 20},
   Card: {marginBottom: 30},
-  PageContainer: {
+  CImage: {
+    borderRadius: 10,
+  },
+  SectionTitle: {
+    marginBottom: 10,
+  },
+};
+
+const LAYOUT = {
+  pageContainer: {
     padding: 16,
+  },
+  scrollViewInner: {
+    paddingBottom: 20,
   },
 };
 
@@ -91,6 +110,7 @@ const THEME = {
   TEXT_INPUT,
   BUTTON,
   ELEMENTS,
+  LAYOUT,
   SHADOW,
 };
 
