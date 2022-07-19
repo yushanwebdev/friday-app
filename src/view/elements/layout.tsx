@@ -4,6 +4,7 @@ import {
   ListRenderItem,
   Pressable,
   StyleProp,
+  View,
   ViewStyle,
 } from 'react-native';
 
@@ -19,6 +20,7 @@ interface Props {
 interface CarouselProps {
   data: any[];
   item: ListRenderItem<React.ReactElement>;
+  title?: string;
 }
 
 const Card: React.FC<Props> = (props: Props) => (

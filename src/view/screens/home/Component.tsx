@@ -29,6 +29,7 @@ import SectionTitle from '../../elements/section/title';
 import ProductDisplay from '../../elements/productDisplay';
 import ProductWidget from '../../widgets/ProductWidget';
 import {Carousel} from '../../elements/layout';
+import CategoryWidget from '../../widgets/CategoryWidget';
 
 interface State {
   name: string;
@@ -183,6 +184,38 @@ class Home extends React.PureComponent<Props, State> {
           <Carousel
             data={this.state.carouselItems}
             item={this.renderCarouselItem}
+          />
+          <CategoryWidget
+            data={[
+              {
+                name: 'Men',
+                icon: <SVGIcons.CategoryIcons.Shoes />,
+              },
+              {
+                name: 'Women',
+                icon: <SVGIcons.CategoryIcons.Headset />,
+              },
+              {
+                name: 'Devices',
+                icon: <SVGIcons.CategoryIcons.Bulb />,
+              },
+              {
+                name: 'Gadgets',
+                icon: <SVGIcons.CategoryIcons.Gamepad />,
+              },
+              {
+                name: 'Games',
+                icon: <SVGIcons.CategoryIcons.Stileto />,
+              },
+              {
+                name: 'Games',
+                icon: <SVGIcons.CategoryIcons.Stileto />,
+              },
+              {
+                name: 'Games',
+                icon: <SVGIcons.CategoryIcons.Stileto />,
+              },
+            ]}
           />
         </ScrollView>
       </SafeAreaView>

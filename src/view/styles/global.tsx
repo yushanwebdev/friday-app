@@ -29,6 +29,13 @@ const WIDGETS = StyleSheet.create({
   productWidget: {
     flexDirection: 'row',
   },
+  categoryWidgetItem: {
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  categoryWidgetIcon: {
+    marginBottom: 8,
+  },
 });
 
 const ELEMENTS = StyleSheet.create({
