@@ -1,9 +1,13 @@
 import * as React from 'react';
 import {
-  FlatList, ListRenderItem, Pressable, StyleProp, ViewStyle,
+  FlatList,
+  ListRenderItem,
+  Pressable,
+  StyleProp,
+  ViewStyle,
 } from 'react-native';
 
-import { GLOBAL } from '../styles/global';
+import {GLOBAL} from '../styles/global';
 
 type Callback = () => any;
 interface Props {
@@ -18,18 +22,22 @@ interface CarouselProps {
 }
 
 const Card: React.FC<Props> = (props: Props) => (
-  <Pressable style={[GLOBAL.ELEMENTS.Card, props.style]} onPress={props.onClick}>
+  <Pressable
+    style={[GLOBAL.ELEMENTS.Card, props.style]}
+    onPress={props.onClick}>
     {props.children}
   </Pressable>
 );
 
-const Carousel: React.FC<CarouselProps> = ({ data, item }: CarouselProps) => (
+const Carousel: React.FC<CarouselProps> = ({data, item}) => (
   <FlatList
-    keyExtractor={(_, index) => `flatlist-${index}-${Math.floor(Math.random() * 100)}`}
+    keyExtractor={(_, index) =>
+      `flatlist-${index}-${Math.floor(Math.random() * 100)}`
+    }
     data={data}
     renderItem={item}
     horizontal={true}
   />
 );
 
-export { Card, Carousel };
+export {Card, Carousel};

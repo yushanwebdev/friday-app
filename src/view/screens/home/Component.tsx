@@ -1,6 +1,13 @@
 import * as React from 'react';
 import {Navigation} from 'react-native-navigation';
-import {SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+  ListRenderItem,
+  Dimensions,
+} from 'react-native';
 
 import {GLOBAL} from '../../styles/global';
 import {Category} from '../../widgets/category';
@@ -10,7 +17,7 @@ import {
   BUTTON_DEFAULT,
   BUTTON_SECONDARY,
 } from '../../elements/buttons';
-import {CTEXT, CTEXTINPUT, CTEXTPRICE} from '../../elements/custom';
+import {CIMAGE, CTEXT, CTEXTINPUT, CTEXTPRICE} from '../../elements/custom';
 
 import {Props} from './index';
 import styles from './styles';
@@ -21,9 +28,11 @@ import {THEME} from '../../styles/theme';
 import SectionTitle from '../../elements/section/title';
 import ProductDisplay from '../../elements/productDisplay';
 import ProductWidget from '../../widgets/ProductWidget';
+import {Carousel} from '../../elements/layout';
 
 interface State {
   name: string;
+  carouselItems: any[];
 }
 
 class Home extends React.PureComponent<Props, State> {
@@ -32,6 +41,14 @@ class Home extends React.PureComponent<Props, State> {
     Navigation.events().bindComponent(this);
     this.state = {
       name: props.name || 'Redux + TypeScript + React Native Navigation',
+      carouselItems: [
+        {
+          url: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80',
+        },
+        {
+          url: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80',
+        },
+      ],
     };
   }
 
@@ -89,6 +106,17 @@ class Home extends React.PureComponent<Props, State> {
       },
     });
   };
+
+  renderCarouselItem: ListRenderItem<any> = ({item, index}) => (
+    <CIMAGE
+      key={`home-carousel-item-${index}`}
+      uri={item.url}
+      style={{
+        width: Dimensions.get('screen').width,
+        height: 200,
+      }}
+    />
+  );
 
   render() {
     const {componentId, text} = this.props;
@@ -152,6 +180,10 @@ class Home extends React.PureComponent<Props, State> {
           <CTEXTPRICE>$755</CTEXTPRICE>
           <ProductDisplay />
           <ProductWidget componentId={componentId} />
+          <Carousel
+            data={this.state.carouselItems}
+            item={this.renderCarouselItem}
+          />
         </ScrollView>
       </SafeAreaView>
     );
