@@ -47,6 +47,13 @@ export const tabbedNavigation = () =>
         center: {
           bottomTabs: {
             id: 'BottomTabsId',
+            options: {
+              bottomTabs: {
+                animate: false,
+                animateTabSelection: false,
+                titleDisplayMode: 'alwaysShow',
+              },
+            },
             children: [
               {
                 stack: {

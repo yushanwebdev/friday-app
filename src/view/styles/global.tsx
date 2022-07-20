@@ -23,6 +23,10 @@ const LAYOUT = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
 
 const WIDGETS = StyleSheet.create({
@@ -31,10 +35,13 @@ const WIDGETS = StyleSheet.create({
   },
   categoryWidgetItem: {
     alignItems: 'center',
-    marginRight: 16,
+    marginRight: 20,
   },
   categoryWidgetIcon: {
     marginBottom: 8,
+  },
+  headerSearchInput: {
+    flex: 1,
   },
 });
 
@@ -50,6 +57,20 @@ const ELEMENTS = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: THEME.ELEMENTS.SectionTitle.marginBottom,
+  },
+  SearchInput: {
+    position: 'relative',
+  },
+  SearchInputIcon: {
+    left: 14,
+    top: '50%',
+    marginTop: -12,
+    position: 'absolute',
+    width: '24px',
+    height: '24px',
+  },
+  Header: {
+    marginVertical: THEME.ELEMENTS.Header.marginVertical,
   },
 });
 
@@ -94,6 +115,15 @@ const CTA = {
     },
     camera: {
       backgroundColor: THEME.COLOR.Primary,
+    },
+    cameraIcon: {
+      color: THEME.COLOR.Default,
+      backgroundColor: THEME.COLOR.Primary,
+      width: THEME.BUTTON.cameraIcon.radius,
+      height: THEME.BUTTON.cameraIcon.radius,
+      borderRadius: THEME.BUTTON.cameraIcon.borderRadius,
+      marginVertical: THEME.BUTTON.cameraIcon.marginVertical,
+      marginLeft: THEME.BUTTON.cameraIcon.marginLeft,
     },
   }),
   TouchableOpacity: {

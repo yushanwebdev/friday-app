@@ -74,6 +74,13 @@ const BUTTON = {
     height: 48,
     borderRadius: 24,
   },
+  cameraIcon: {
+    radius: 36,
+    borderRadius: 18,
+    marginVertical: 0,
+    marginLeft: 15,
+    icon: {width: 22, height: 22},
+  },
 };
 
 const ELEMENTS = {
@@ -84,6 +91,13 @@ const ELEMENTS = {
   },
   SectionTitle: {
     marginBottom: 10,
+  },
+
+  SearchInputIcon: {
+    paddingHorizontal: 40,
+  },
+  Header: {
+    marginVertical: 5,
   },
 };
 

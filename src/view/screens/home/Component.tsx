@@ -30,6 +30,8 @@ import ProductDisplay from '../../elements/productDisplay';
 import ProductWidget from '../../widgets/ProductWidget';
 import {Carousel} from '../../elements/layout';
 import CategoryWidget from '../../widgets/CategoryWidget';
+import SearchInput from '../../elements/searchInput';
+import Header from '../../widgets/header';
 
 interface State {
   name: string;
@@ -127,64 +129,7 @@ class Home extends React.PureComponent<Props, State> {
         <ScrollView
           style={GLOBAL.LAYOUT.pageContainer}
           contentContainerStyle={GLOBAL.LAYOUT.scrollViewInner}>
-          <TouchableOpacity onPress={this.onPressCart}>
-            <Image
-              style={styles.image}
-              resizeMode={'contain'}
-              source={require('../../assets/images/cart.png')}
-            />
-          </TouchableOpacity>
-          <Category componentId={componentId} title={locale.Categories} />
-          <CTEXT>{locale.Home}</CTEXT>
-          <CTEXT>{text}</CTEXT>
-          <CTEXTINPUT />
-          <Image
-            style={styles.image}
-            resizeMode={'contain'}
-            source={{
-              uri: 'sample',
-            }}
-          />
-          <BUTTON_DEFAULT
-            onClick={this.showPushScreen}
-            title={'Push Screen'}
-            style={{
-              alignSelf: 'center',
-              marginTop: 50,
-              width: 250,
-            }}
-          />
-          <BUTTON_SECONDARY
-            onClick={this.showModal}
-            title={'Show Modal'}
-            style={{
-              alignSelf: 'center',
-              marginTop: 50,
-              width: 250,
-            }}
-          />
-          <CTEXT style={GLOBAL.TEXT.h1}>Categories</CTEXT>
-          <CTEXT style={GLOBAL.TEXT.subTitle}>See all</CTEXT>
-          <CTEXT style={GLOBAL.TEXT.body}>Bang and Olufsen</CTEXT>
-          <SVGIcons.Search color={THEME.COLOR.Primary} />
-          <BUTTON_CATEGORY
-            icon={<SVGIcons.CategoryIcons.Shoes />}
-            onClick={() => {}}
-          />
-          <SectionTitle title="Categories" subTitle="See All" />
-          <BUTTON_CATEGORY
-            icon={<SVGIcons.Camera />}
-            onClick={() => {}}
-            style={GLOBAL.CTA.Style.camera}
-            hideShadow={false}
-          />
-          <CTEXTPRICE>$755</CTEXTPRICE>
-          <ProductDisplay />
-          <ProductWidget componentId={componentId} />
-          <Carousel
-            data={this.state.carouselItems}
-            item={this.renderCarouselItem}
-          />
+          <Header />
           <CategoryWidget
             data={[
               {
@@ -216,6 +161,11 @@ class Home extends React.PureComponent<Props, State> {
                 icon: <SVGIcons.CategoryIcons.Stileto />,
               },
             ]}
+          />
+          <ProductWidget componentId={componentId} />
+          <Carousel
+            data={this.state.carouselItems}
+            item={this.renderCarouselItem}
           />
         </ScrollView>
       </SafeAreaView>
