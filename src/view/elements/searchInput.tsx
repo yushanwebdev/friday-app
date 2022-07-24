@@ -1,20 +1,34 @@
 import * as React from 'react';
-import {Pressable, PressableProps, ViewStyle} from 'react-native';
+import {
+  NativeSyntheticEvent,
+  Pressable,
+  PressableProps,
+  TextInputSubmitEditingEventData,
+  ViewStyle,
+} from 'react-native';
 import {THEME} from '../styles/theme';
 import {CTEXTINPUT} from './custom';
 import SVGIcons from '../assets/images/svgs';
 import {GLOBAL} from '../styles/global';
 
+type onSubmitEvent = ({
+  nativeEvent,
+}: NativeSyntheticEvent<TextInputSubmitEditingEventData>) => void;
 interface Props {
   onClick: PressableProps['onPress'];
   disabled: boolean;
   style?: ViewStyle;
+  onSubmit?: onSubmitEvent;
 }
 
-const SearchInput: React.FC<Props> = ({onClick, style}) => {
+const SearchInput: React.FC<Props> = ({disabled, onClick, style, onSubmit}) => {
   return (
     <Pressable onPress={onClick} style={[GLOBAL.ELEMENTS.SearchInput, style]}>
-      <CTEXTINPUT />
+      <CTEXTINPUT
+        disabled={disabled}
+        onSubmit={onSubmit}
+        style={GLOBAL.ELEMENTS.SearchInputEle}
+      />
       <SVGIcons.Search
         color={THEME.COLOR.DefaultSelected}
         style={GLOBAL.ELEMENTS.SearchInputIcon}

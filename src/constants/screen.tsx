@@ -4,6 +4,7 @@
 const SCREENS = {
   Splash: 'Splash',
   Home: 'Home',
+  Search: 'Search',
   Settings: 'Settings',
   Drawer: 'Drawer',
   Dummy: 'Dummy',

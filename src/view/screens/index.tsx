@@ -9,9 +9,9 @@ import * as Home from './home';
 import * as Settings from './settings';
 import * as Drawer from './drawer';
 import * as Dummy from './dummy';
-import * as Dummy2 from './dummy2';
 import * as Listings from './Listings';
 import * as CART from '../elements/cartButton';
+import * as Search from './search';
 
 const registerComponentWithRedux =
   (redux: any) => (name: string, screen: any) => {
@@ -30,10 +30,10 @@ const registerComponentWithRedux =
 export function registerScreens(redux: any) {
   registerComponentWithRedux(redux)(SCREENS.Splash, Splash);
   registerComponentWithRedux(redux)(SCREENS.Home, Home);
+  registerComponentWithRedux(redux)(SCREENS.Search, Search);
   registerComponentWithRedux(redux)(SCREENS.Settings, Settings);
   registerComponentWithRedux(redux)(SCREENS.Drawer, Drawer);
   registerComponentWithRedux(redux)(SCREENS.Dummy, Dummy);
-  registerComponentWithRedux(redux)(SCREENS.Dummy2, Dummy2);
   registerComponentWithRedux(redux)(SCREENS.Listings, Listings);
   registerComponentWithRedux(redux)(ACTION_BUTTONS.Cart, CART);
 }

@@ -19,7 +19,7 @@ type onSubmitEvent = ({
 interface Props {
   inputDisabled?: boolean;
   onClick?: Callback;
-  onSubmit?: ((event: GestureResponderEvent) => void) | null | undefined;
+  onSubmit?: onSubmitEvent;
 }
 
 const Header: React.FC<Props> = ({
@@ -30,9 +30,10 @@ const Header: React.FC<Props> = ({
   <Card onClick={onClick}>
     <View style={[GLOBAL.LAYOUT.row, GLOBAL.ELEMENTS.Header]}>
       <SearchInput
-        onClick={onSubmit}
+        onClick={onClick}
         disabled={inputDisabled}
         style={GLOBAL.WIDGETS.headerSearchInput}
+        onSubmit={onSubmit}
       />
       <BUTTON_CATEGORY
         onClick={onClick || (() => {})}

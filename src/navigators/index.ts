@@ -3,7 +3,7 @@ import {Navigation} from 'react-native-navigation';
 import store from '../../shared/redux/store';
 import {registerScreens} from '../view/screens';
 import {THEME} from '../view/styles/theme';
-import {showSplash, tabbedNavigation} from './navigation';
+import {showSplash} from './navigation';
 
 /**
  * Register screens and components for react native navigation

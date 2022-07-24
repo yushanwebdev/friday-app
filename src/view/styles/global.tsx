@@ -61,6 +61,9 @@ const ELEMENTS = StyleSheet.create({
   SearchInput: {
     position: 'relative',
   },
+  SearchInputEle: {
+    paddingLeft: 45,
+  },
   SearchInputIcon: {
     left: 14,
     top: '50%',
