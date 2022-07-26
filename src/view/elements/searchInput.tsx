@@ -10,6 +10,7 @@ import {THEME} from '../styles/theme';
 import {CTEXTINPUT} from './custom';
 import SVGIcons from '../assets/images/svgs';
 import {GLOBAL} from '../styles/global';
+import {SearchContext} from '../screens/search/Component';
 
 type onSubmitEvent = ({
   nativeEvent,
@@ -24,15 +25,22 @@ interface Props {
 const SearchInput: React.FC<Props> = ({disabled, onClick, style, onSubmit}) => {
   return (
     <Pressable onPress={onClick} style={[GLOBAL.ELEMENTS.SearchInput, style]}>
-      <CTEXTINPUT
-        disabled={disabled}
-        onSubmit={onSubmit}
-        style={GLOBAL.ELEMENTS.SearchInputEle}
-      />
-      <SVGIcons.Search
-        color={THEME.COLOR.DefaultSelected}
-        style={GLOBAL.ELEMENTS.SearchInputIcon}
-      />
+      <SearchContext.Consumer>
+        {search => (
+          <>
+            <CTEXTINPUT
+              disabled={disabled}
+              onSubmit={onSubmit}
+              style={GLOBAL.ELEMENTS.SearchInputEle}
+              value={search.searchTerm}
+            />
+            <SVGIcons.Search
+              color={THEME.COLOR.DefaultSelected}
+              style={GLOBAL.ELEMENTS.SearchInputIcon}
+            />
+          </>
+        )}
+      </SearchContext.Consumer>
     </Pressable>
   );
 };

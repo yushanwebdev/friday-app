@@ -50,8 +50,9 @@ const CTEXTINPUT: React.FC<TextInputProps> = (props: TextInputProps) => {
     textInputRef,
     disabled = false,
     onSubmit,
+    value,
   } = props;
-  const [data, setData] = React.useState('');
+  const [data, setData] = React.useState(value);
 
   return (
     <TextInput

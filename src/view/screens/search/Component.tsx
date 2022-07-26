@@ -18,6 +18,11 @@ interface Props {
   componentId: string;
 }
 
+const searchTerm = {
+  searchTerm: 'Earphones',
+};
+export const SearchContext = React.createContext(searchTerm);
+
 const Search: React.FC<Props> = props => {
   const [recentSearches, setRecentSearches] = React.useState<string[]>([]);
 
@@ -39,15 +44,17 @@ const Search: React.FC<Props> = props => {
 
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
-      <View style={GLOBAL.LAYOUT.pageContainer}>
-        <Header onSubmit={onSubmit} />
-        <View>
-          <SectionTitle title="Recent Searches" />
-          {recentSearches.map((search, i) => (
-            <CTEXT key={`search_${i}`}>{search}</CTEXT>
-          ))}
+      <SearchContext.Provider value={searchTerm}>
+        <View style={GLOBAL.LAYOUT.pageContainer}>
+          <Header onSubmit={onSubmit} />
+          <View>
+            <SectionTitle title="Recent Searches" />
+            {recentSearches.map((search, i) => (
+              <CTEXT key={`search_${i}`}>{search}</CTEXT>
+            ))}
+          </View>
         </View>
-      </View>
+      </SearchContext.Provider>
     </SafeAreaView>
   );
 };
