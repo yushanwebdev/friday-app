@@ -18,45 +18,38 @@ interface Props {
   componentId: string;
 }
 
-interface State {
-  recentSearches: string[];
-}
+const Search: React.FC<Props> = props => {
+  const [recentSearches, setRecentSearches] = React.useState<string[]>([]);
 
-class Search extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-
-    this.state = {
-      recentSearches: [],
-    };
-  }
-
-  onSubmit: onSubmitEvent = ({nativeEvent}) => {
-    console.log('>>> nativeEvent.text', nativeEvent.text);
-    const {recentSearches} = this.state;
-    recentSearches.push(nativeEvent.text);
-    this.setState({recentSearches}, () => {
-      console.log('recentSearches', this.state.recentSearches);
-    });
+  const onSubmit: onSubmitEvent = ({nativeEvent}) => {
+    setRecentSearches([...recentSearches, nativeEvent.text]);
   };
 
-  render() {
-    const {recentSearches} = this.state;
+  React.useEffect(() => {
+    async function thatAPICall() {
+      setRecentSearches(['Speakers']);
+    }
 
-    return (
-      <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
-        <View style={GLOBAL.LAYOUT.pageContainer}>
-          <Header onSubmit={this.onSubmit} />
-          <View>
-            <SectionTitle title="Recent Searches" />
-            {recentSearches.map((search, i) => (
-              <CTEXT key={`search_${i}`}>{search}</CTEXT>
-            ))}
-          </View>
+    if (!recentSearches.length) thatAPICall();
+
+    console.log('render!');
+
+    return () => console.log('unmounting...');
+  }, [recentSearches]);
+
+  return (
+    <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
+      <View style={GLOBAL.LAYOUT.pageContainer}>
+        <Header onSubmit={onSubmit} />
+        <View>
+          <SectionTitle title="Recent Searches" />
+          {recentSearches.map((search, i) => (
+            <CTEXT key={`search_${i}`}>{search}</CTEXT>
+          ))}
         </View>
-      </SafeAreaView>
-    );
-  }
-}
+      </View>
+    </SafeAreaView>
+  );
+};
 
 export default Search;
