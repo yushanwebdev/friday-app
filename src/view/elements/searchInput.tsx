@@ -23,24 +23,20 @@ interface Props {
 }
 
 const SearchInput: React.FC<Props> = ({disabled, onClick, style, onSubmit}) => {
+  const search = React.useContext(SearchContext);
+
   return (
     <Pressable onPress={onClick} style={[GLOBAL.ELEMENTS.SearchInput, style]}>
-      <SearchContext.Consumer>
-        {search => (
-          <>
-            <CTEXTINPUT
-              disabled={disabled}
-              onSubmit={onSubmit}
-              style={GLOBAL.ELEMENTS.SearchInputEle}
-              value={search.searchTerm}
-            />
-            <SVGIcons.Search
-              color={THEME.COLOR.DefaultSelected}
-              style={GLOBAL.ELEMENTS.SearchInputIcon}
-            />
-          </>
-        )}
-      </SearchContext.Consumer>
+      <CTEXTINPUT
+        disabled={disabled}
+        onSubmit={onSubmit}
+        style={GLOBAL.ELEMENTS.SearchInputEle}
+        value={search.searchTerm}
+      />
+      <SVGIcons.Search
+        color={THEME.COLOR.DefaultSelected}
+        style={GLOBAL.ELEMENTS.SearchInputIcon}
+      />
     </Pressable>
   );
 };
