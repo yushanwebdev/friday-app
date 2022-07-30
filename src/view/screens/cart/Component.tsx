@@ -1,18 +1,8 @@
 import * as React from 'react';
 import {SafeAreaView, View} from 'react-native';
-import {Dispatch} from 'redux';
-import {RootState} from '../../../../shared/redux/reducers';
-import {IAction} from '../../../../shared/redux/types/IAction';
+import {Props} from '.';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {GLOBAL} from '../../styles/global';
-
-interface Props {
-  componentId: string;
-  addItemToCart: (
-    componentID: string,
-    params: any,
-  ) => (dispatch: Dispatch<IAction<any>>, getState: () => RootState) => void;
-}
 
 const Cart: React.FC<Props> = props => {
   return (
