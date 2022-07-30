@@ -9,6 +9,7 @@ import {GLOBAL} from '../../styles/global';
 interface Props {
   componentId: string;
   addItemToCart: (
+    componentID: string,
     params: any,
   ) => (dispatch: Dispatch<IAction<any>>, getState: () => RootState) => void;
 }
@@ -20,7 +21,7 @@ const Cart: React.FC<Props> = props => {
         <BUTTON_DEFAULT
           title="Add to Cart"
           onClick={() =>
-            props.addItemToCart({
+            props.addItemToCart(props.componentId, {
               item: 'Speakers',
             })
           }
