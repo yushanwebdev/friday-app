@@ -10,6 +10,10 @@ const ACTION_TYPES = {
     HOME_LAUNCHED: 'HOME_LAUNCHED',
     HOME_DATA_FETCHED: 'HOME_DATA_FETCHED',
   },
+  // Cart Screen Actions
+  CART: {
+    ADD_TO_CART: 'ADD_TO_CART',
+  },
 };
 
-export { ACTION_TYPES };
+export {ACTION_TYPES};

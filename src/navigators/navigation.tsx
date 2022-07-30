@@ -117,7 +117,7 @@ export const tabbedNavigation = () =>
                   children: [
                     {
                       component: {
-                        name: SCREENS.Settings,
+                        name: SCREENS.Cart,
                       },
                     },
                   ],

@@ -8,7 +8,7 @@ const SCREENS = {
   Settings: 'Settings',
   Drawer: 'Drawer',
   Dummy: 'Dummy',
-  Dummy2: 'Dummy2',
+  Cart: 'CartPage',
   Listings: 'Listings',
 };
 
