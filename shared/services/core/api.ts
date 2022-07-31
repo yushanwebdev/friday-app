@@ -1,10 +1,12 @@
 import config from '../../../src/config';
-import { jsonToQueryString } from '../utilities/lib';
+import {jsonToQueryString} from '../utilities/lib';
+import State from '../../redux/store';
 
 const defaultHeaders = () => {
   return {
     Accept: 'application/json',
-    'x-host': config.apis.baseUrl,
+    'X-RapidAPI-Host': config.apis.host,
+    'X-RapidAPI-Key': config.apis.key,
     'Content-Type': 'application/json',
   };
 };

@@ -3,17 +3,27 @@ import {ThunkDispatch} from 'redux-thunk';
 
 import Component from './Component';
 import {RootState} from '../../../../shared/redux/reducers';
+import {searchRequested} from '../../../../shared/redux/thunk/search';
+import {AppDispatch} from '../../../../shared/redux/store';
 
-export interface Props {
-  dummyText: string;
-  componentId: string;
+interface IStateToProps {}
+
+interface IDispatchToProps {
+  search: (query: string) => (dispatch: AppDispatch) => Promise<any>;
 }
 
-const mapStateToProps = (state: RootState) => ({
-  app: state.app,
-});
+export interface Props extends IStateToProps, IDispatchToProps {
+  componentId: string;
+  query: string;
+}
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, any>) => ({});
+const mapStateToProps = (state: RootState): IStateToProps => ({});
+
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<{}, {}, any>,
+): IDispatchToProps => ({
+  search: (query: string) => dispatch(searchRequested({query})),
+});
 
 const ListingsContainer = connect(
   mapStateToProps,

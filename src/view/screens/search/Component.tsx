@@ -3,8 +3,11 @@ import {
   NativeSyntheticEvent,
   SafeAreaView,
   TextInputSubmitEditingEventData,
+  Touchable,
+  TouchableOpacity,
   View,
 } from 'react-native';
+import ROUTER from '../../../navigators/router';
 import {CTEXT} from '../../elements/custom';
 import SectionTitle from '../../elements/section/title';
 import {GLOBAL} from '../../styles/global';
@@ -19,7 +22,7 @@ interface Props {
 }
 
 const searchTerm = {
-  searchTerm: 'Earphones',
+  searchTerm: 'Knight',
 };
 export const SearchContext = React.createContext(searchTerm);
 
@@ -32,14 +35,10 @@ const Search: React.FC<Props> = props => {
 
   React.useEffect(() => {
     async function thatAPICall() {
-      setRecentSearches(['Speakers']);
+      setRecentSearches(['Avengers']);
     }
 
     if (!recentSearches.length) thatAPICall();
-
-    console.log('render!');
-
-    return () => console.log('unmounting...');
   }, [recentSearches]);
 
   return (
@@ -50,7 +49,21 @@ const Search: React.FC<Props> = props => {
           <View>
             <SectionTitle title="Recent Searches" />
             {recentSearches.map((search, i) => (
-              <CTEXT key={`search_${i}`}>{search}</CTEXT>
+              <TouchableOpacity
+                onPress={() =>
+                  ROUTER.showListingsScreen(
+                    {
+                      componentId: props.componentId,
+                      passProps: {
+                        query: search,
+                      },
+                    },
+                    search,
+                  )
+                }
+                key={`search_${i}`}>
+                <CTEXT>{search}</CTEXT>
+              </TouchableOpacity>
             ))}
           </View>
         </View>

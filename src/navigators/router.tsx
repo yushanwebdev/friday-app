@@ -85,7 +85,7 @@ const showListingsScreen = (
   {componentId, passProps = {}}: INavigation,
   title?: string,
 ) => {
-  push({componentId, passProps}, SCREENS.Dummy, title);
+  push({componentId, passProps}, SCREENS.Listings, title);
 };
 
 const popToScreen = ({componentId}: INavigation) => {

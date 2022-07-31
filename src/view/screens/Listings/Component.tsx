@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, ScrollView} from 'react-native';
 
 import {GLOBAL} from '../../styles/global';
 import {CTEXT} from '../../elements/custom';
@@ -7,16 +7,38 @@ import {CTEXT} from '../../elements/custom';
 import {Props} from './index';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {Navigation} from 'react-native-navigation';
+import ProductDisplay from '../../elements/productDisplay';
 
 const Listings: React.FC<Props> = (props: Props) => {
-  const backNavigation = () => {
-    Navigation.popToRoot(props.componentId);
-  };
+  const [result, setResult] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    const getAPIData = async () => {
+      const response = await props.search(props.query);
+      setResult(response);
+    };
+
+    getAPIData();
+  }, []);
 
   return (
     <SafeAreaView style={GLOBAL.LAYOUT.SafeArea}>
-      <CTEXT>{'This Screen has been pushed over Home screen'}</CTEXT>
-      <BUTTON_DEFAULT title="Go Back" onClick={backNavigation} />
+      <ScrollView
+        style={GLOBAL.LAYOUT.pageContainer}
+        contentContainerStyle={{
+          ...GLOBAL.LAYOUT.scrollViewInner,
+          ...GLOBAL.LAYOUT.listing,
+        }}>
+        {result &&
+          result.map((item: any, i: number) => (
+            <ProductDisplay
+              key={i}
+              width="48%"
+              title={item.Title}
+              img={item.Poster}
+            />
+          ))}
+      </ScrollView>
     </SafeAreaView>
   );
 };

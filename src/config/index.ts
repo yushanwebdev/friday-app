@@ -10,7 +10,9 @@ const DEFAULTS = {
     platforms: ['ios', 'android'],
   },
   apis: {
-    baseUrl: `https://api.${domain}`,
+    baseUrl: `https://movie-database-alternative.p.rapidapi.com`,
+    host: 'movie-database-alternative.p.rapidapi.com',
+    key: 'a31b811d85mshdbf1eec80a2769fp123457jsn554f71d8ae23',
     public: {
       backend: `${base}`,
     },

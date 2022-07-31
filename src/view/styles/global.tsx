@@ -27,6 +27,11 @@ const LAYOUT = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  listing: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
 });
 
 const WIDGETS = StyleSheet.create({

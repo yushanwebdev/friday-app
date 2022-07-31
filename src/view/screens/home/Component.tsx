@@ -42,15 +42,15 @@ class Home extends React.PureComponent<Props, State> {
   }
 
   componentDidMount() {
-    console.log('>>> MOUNT <<<');
+    ('>>> MOUNT <<<');
   }
 
   componentDidAppear() {
-    console.log('>>> APPEAR <<<');
+    ('>>> APPEAR <<<');
   }
 
   componentWillUnmount() {
-    console.log('>>> UNMOUNT <<<');
+    ('>>> UNMOUNT <<<');
   }
 
   showBurgerMenu() {

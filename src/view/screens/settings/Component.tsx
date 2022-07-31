@@ -8,7 +8,7 @@ export interface Props {}
 
 const SETTINGS: React.FC<Props> = (props: Props) => {
   React.useEffect(() => {
-    console.log('Settings Mounted');
+    ('Settings Mounted');
   }, []);
 
   return (

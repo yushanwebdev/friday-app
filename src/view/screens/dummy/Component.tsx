@@ -15,10 +15,10 @@ const DUMMY: NavigationFunctionComponent<Props> = (props: Props) => {
   };
 
   React.useEffect(() => {
-    console.log('>>> DUMMY MOUNT <<<');
+    ('>>> DUMMY MOUNT <<<');
 
     return () => {
-      console.log('>>> DUMMY UNMOUNT <<<');
+      ('>>> DUMMY UNMOUNT <<<');
     };
   }, []);
 
