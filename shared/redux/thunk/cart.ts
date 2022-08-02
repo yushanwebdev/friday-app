@@ -13,7 +13,7 @@ export const addItemsToCart =
   (dispatch: AppDispatch, getState: () => RootState) => {
     dispatch(addToCart(item));
 
-    const store = getState().cart;
+    const store = getState().cart.items;
     Storage.set(config.keys.cart, store);
 
     Navigation.mergeOptions(componentID, {

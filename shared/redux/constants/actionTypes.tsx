@@ -13,6 +13,7 @@ const ACTION_TYPES = {
   // Cart Screen Actions
   CART: {
     ADD_TO_CART: 'ADD_TO_CART',
+    INIT_CART: 'INIT_CART',
   },
   // Search Actions
   SEARCH: {

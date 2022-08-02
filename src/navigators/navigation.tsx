@@ -2,6 +2,7 @@
  * Application navigation stacks to be defined here.
  */
 import {Navigation} from 'react-native-navigation';
+import store from '../../shared/redux/store';
 
 import {SCREENS} from '../constants/screen';
 import {THEME} from '../view/styles/theme';
@@ -135,6 +136,7 @@ export const tabbedNavigation = () =>
                       selectedIconColor: THEME.COLOR.Warning,
                       icon: require('../view/assets/images/tabbar/cart.png'),
                       selectedIcon: require('../view/assets/images/tabbar/cart_active.png'),
+                      badge: store.getState().cart.items.length.toString(),
                     },
                   },
                 },

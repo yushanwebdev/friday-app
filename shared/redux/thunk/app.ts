@@ -6,6 +6,7 @@ import {RootState} from '../reducers';
 import {splashLaunched} from '../actions/app';
 import Storage from '../../services/core/storage';
 import config from '../../../src/config';
+import {initCart} from '../actions/cart';
 
 export const splashScreenLaunched =
   () => async (dispatch: AppDispatch, getState: () => RootState) => {
@@ -18,5 +19,7 @@ export const splashScreenLaunched =
      */
 
     const cart = await Storage.get(config.keys.cart);
+
+    dispatch(initCart(cart));
     console.log('>>> cart', cart);
   };
