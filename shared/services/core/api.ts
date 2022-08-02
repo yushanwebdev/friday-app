@@ -1,6 +1,5 @@
 import config from '../../../src/config';
 import {jsonToQueryString} from '../utilities/lib';
-import State from '../../redux/store';
 
 const defaultHeaders = () => {
   return {
