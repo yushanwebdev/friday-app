@@ -23,6 +23,9 @@ const DEFAULTS = {
       logout: `${base}/logout`,
     },
   },
+  keys: {
+    cart: 'cart',
+  },
 };
 
 export default DEFAULTS;
