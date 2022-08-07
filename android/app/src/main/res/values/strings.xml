@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FridayApp</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">qyBQ51UYx_z38XqELfCyOJwe9j3e7I5DgNnH9</string>
 </resources>
