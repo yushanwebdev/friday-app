@@ -53,6 +53,7 @@ export const tabbedNavigation = () =>
                 animate: false,
                 animateTabSelection: false,
                 titleDisplayMode: 'alwaysShow',
+                visible: false,
               },
             },
             children: [

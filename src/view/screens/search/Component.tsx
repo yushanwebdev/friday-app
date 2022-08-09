@@ -11,6 +11,7 @@ import ROUTER from '../../../navigators/router';
 import {CTEXT} from '../../elements/custom';
 import SectionTitle from '../../elements/section/title';
 import {GLOBAL} from '../../styles/global';
+import BottomNav from '../../widgets/BottomNav';
 import Header from '../../widgets/header';
 
 type onSubmitEvent = ({
@@ -68,6 +69,7 @@ const Search: React.FC<Props> = props => {
           </View>
         </View>
       </SearchContext.Provider>
+      <BottomNav componentId={props.componentId} />
     </SafeAreaView>
   );
 };

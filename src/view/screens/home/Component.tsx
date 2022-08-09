@@ -18,6 +18,7 @@ import ProductWidget from '../../widgets/ProductWidget';
 import {Carousel} from '../../elements/layout';
 import CategoryWidget from '../../widgets/CategoryWidget';
 import Header from '../../widgets/header';
+import BottomNav from '../../widgets/BottomNav';
 
 interface State {
   name: string;
@@ -154,6 +155,7 @@ class Home extends React.PureComponent<Props, State> {
             item={this.renderCarouselItem}
           />
         </ScrollView>
+        <BottomNav componentId={this.props.componentId} />
       </SafeAreaView>
     );
   }
