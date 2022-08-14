@@ -13,6 +13,7 @@ import * as Listings from './Listings';
 import * as Cart from './cart';
 import * as CART from '../elements/cartButton';
 import * as Search from './search';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const registerComponentWithRedux =
   (redux: any) => (name: string, screen: any) => {
@@ -20,9 +21,11 @@ const registerComponentWithRedux =
       name,
       () => (props: any) =>
         (
+          <SafeAreaProvider>
           <Provider store={redux.store}>
             <screen.default {...props} />
           </Provider>
+          </SafeAreaProvider>
         ),
       () => screen.default,
     );

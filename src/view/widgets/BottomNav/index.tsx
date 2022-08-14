@@ -8,14 +8,16 @@ import {
   View,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Svg, {Path} from 'react-native-svg';
 
 const BottomNav: React.FC<{
   componentId: string;
 }> = props => {
   const {width} = useWindowDimensions();
+  const {bottom} = useSafeAreaInsets();
 
-  const HEIGHT_BOTTOM_TAB = 66;
+  const HEIGHT_BOTTOM_TAB = bottom + 66;
   const LINE = (width - (24 * 2 + 28 * 2 + 76)) / 2;
   const BORDER = width - (LINE + 52) * 2;
   const viewBox = `0 0 ${width} ${HEIGHT_BOTTOM_TAB - 2}`;
@@ -51,7 +53,7 @@ const BottomNav: React.FC<{
           {
             width: width,
             height: HEIGHT_BOTTOM_TAB,
-            paddingBottom: 8,
+            paddingBottom: bottom,
             flexDirection: 'row',
             justifyContent: 'space-between',
             position: 'absolute',
@@ -65,8 +67,7 @@ const BottomNav: React.FC<{
               flex: 1,
               alignItems: 'center',
               justifyContent: 'flex-end',
-              marginRight: 24,
-              marginLeft: 24,
+              marginLeft: 10,
             },
           ]}
           onPress={() => {
@@ -85,8 +86,7 @@ const BottomNav: React.FC<{
               flex: 1,
               alignItems: 'center',
               justifyContent: 'flex-end',
-              marginRight: 24,
-              marginLeft: 24,
+              marginLeft: 16,
             },
           ]}
           onPress={() => {
@@ -96,6 +96,44 @@ const BottomNav: React.FC<{
           }}>
           <Image source={require('../../assets/images/tabbar/search.png')} />
           <Text>Search</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          key={2}
+          accessibilityRole="button"
+          style={[
+            {
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              marginLeft: 75,
+            },
+          ]}
+          onPress={() => {
+            Navigation.mergeOptions(props.componentId, {
+              bottomTabs: {currentTabIndex: 2},
+            });
+          }}>
+          <Image source={require('../../assets/images/tabbar/cart.png')} />
+          <Text>Cart</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          key={3}
+          accessibilityRole="button"
+          style={[
+            {
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'flex-end',
+              marginLeft: 10,
+            },
+          ]}
+          onPress={() => {
+            Navigation.mergeOptions(props.componentId, {
+              bottomTabs: {currentTabIndex: 3},
+            });
+          }}>
+          <Image source={require('../../assets/images/tabbar/setting.png')} />
+          <Text>Cart</Text>
         </TouchableOpacity>
       </View>
     </View>

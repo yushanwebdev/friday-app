@@ -5,6 +5,7 @@ import store from '../../../../shared/redux/store';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {GLOBAL} from '../../styles/global';
 import Lottie from 'lottie-react-native';
+import BottomNav from '../../widgets/BottomNav';
 
 const Cart: React.FC<Props> = props => {
   return (
@@ -28,6 +29,7 @@ const Cart: React.FC<Props> = props => {
           }
         />
       </View>
+      <BottomNav componentId={props.componentId} />
     </SafeAreaView>
   );
 };
